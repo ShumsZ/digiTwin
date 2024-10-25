@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom'; // Import ReactDOM
 import './Card.css';
 
-const Card = ({ detail, status, info }) => {
+const Card = ({ detail, status, info, adminDetail, isAdmin }) => {
   const [showDetail, setShowDetail] = useState(false);
 
   const handleClick = () => {
@@ -33,7 +33,7 @@ const Card = ({ detail, status, info }) => {
         <span className="close-button" onClick={handleClose}>
           &times;
         </span>
-        <p>{detail}</p>
+        <p>{isAdmin ? adminDetail : detail}</p>
       </div>
     </div>
   );
